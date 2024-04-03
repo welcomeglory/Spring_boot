@@ -19,4 +19,21 @@ public class HomeController {
 		
 		return "home1";
 	}
+	
+	@GetMapping("/go")
+	public String go() {
+		System.out.println("go()..");
+		
+		return "go";
+	}
+	
+	@GetMapping("/stop")
+	public String stop() {
+		System.out.println("stop()..");
+		
+		return "stop";
+	}
+	
+	
+	
 }
