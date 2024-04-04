@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.ex.vo.Circle;
@@ -29,12 +30,24 @@ public class ShapeController {
 	return "home";
 	}
 	//http://localhost:8282/shape/circle?radius=10
+//	@RequestMapping("/circle")
+//	public String circle(HttpServletRequest request,Model model) {
+//		System.out.println("circle()..");
+//		String radius = request.getParameter("radius");
+//		
+//		Circle circle = new Circle(Integer.valueOf(radius));
+//
+//		model.addAttribute("circle", circle);
+//
+//
+//		return "/shape/circle";
+//	}
 	@RequestMapping("/circle")
-	public String circle(HttpServletRequest request,Model model) {
+	public String circle(@RequestParam("radius") double radius, Model model) {
 		System.out.println("circle()..");
-		String radius = request.getParameter("radius");
+//		String radius = request.getParameter("radius");
 		
-		Circle circle = new Circle(Integer.valueOf(radius));
+		Circle circle = new Circle(radius);
 
 		model.addAttribute("circle", circle);
 
