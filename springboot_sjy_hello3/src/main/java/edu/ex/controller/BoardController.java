@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller //url 처리 view 결정
 public class BoardController {
@@ -47,8 +48,13 @@ public class BoardController {
 		
 		String formattedDate = dateFormat.format(date);
 	      model.addAttribute("serverTime", formattedDate );
-
-
+	}
+	@RequestMapping("/board/reply")
+	public ModelAndView reply() {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("id",30);
+		mv.setViewName("board/reply");
+		return mv;
 	}
 	
 }
