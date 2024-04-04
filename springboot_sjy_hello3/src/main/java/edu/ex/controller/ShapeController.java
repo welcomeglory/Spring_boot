@@ -46,11 +46,9 @@ public class ShapeController {
 	public String circle(@RequestParam("radius") double radius, Model model) {
 		System.out.println("circle()..");
 //		String radius = request.getParameter("radius");
-		
 		Circle circle = new Circle(radius);
 
 		model.addAttribute("circle", circle);
-
 
 		return "/shape/circle";
 	}
