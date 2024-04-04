@@ -29,7 +29,7 @@ public class ShapeController {
 	return "home";
 	}
 	//http://localhost:8282/shape/circle?radius=10
-	@PostMapping("/circle")
+	@RequestMapping("/circle")
 	public String circle(HttpServletRequest request,Model model) {
 		System.out.println("circle()..");
 		String radius = request.getParameter("radius");
