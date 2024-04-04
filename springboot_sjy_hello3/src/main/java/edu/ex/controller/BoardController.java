@@ -50,8 +50,8 @@ public class BoardController {
 	      model.addAttribute("serverTime", formattedDate );
 	}
 	@RequestMapping("/board/reply")
-	public ModelAndView reply() {
-		ModelAndView mv = new ModelAndView();
+	public ModelAndView reply(ModelAndView mv) {
+//		ModelAndView mv = new ModelAndView();
 		mv.addObject("id",30);
 		mv.setViewName("board/reply");
 		return mv;
