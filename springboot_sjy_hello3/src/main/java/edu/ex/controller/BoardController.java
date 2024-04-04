@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import edu.ex.vo.Grade;
+
 @Controller // url 처리 view 결정
 public class BoardController {
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
@@ -57,6 +59,15 @@ public class BoardController {
 		mv.addObject("id", 30);
 		mv.setViewName("board/reply");
 		return mv;
+	}
+	
+	@RequestMapping("/board/grade")
+	public String grade(Model model) {
+		Grade grade = new Grade(80,60,70);
+		
+		model.addAttribute("grade", grade);
+
+		return "board/grade";
 	}
 
 }
