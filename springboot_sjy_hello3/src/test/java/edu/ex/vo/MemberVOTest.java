@@ -11,8 +11,18 @@ class MemberVOTest {
 		MemberVO memberVO = new MemberVO();
 		System.out.println(memberVO);
 		
+		memberVO.setAge(10);
+		memberVO.setName("홍길동");
+
 		assertNotNull(memberVO);
-		
+//		assertEquals(memberVO.getAge(), 0);
+		assertEquals(memberVO.getAge(), 10);
+		assertEquals(memberVO.getName(), "홍길동");
+		assertTrue(memberVO.getName().equals("홍길동"));
+
+
+
+
 	}
 
 }
