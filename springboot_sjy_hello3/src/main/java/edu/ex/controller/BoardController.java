@@ -1,6 +1,11 @@
 package edu.ex.controller;
 
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,16 +24,31 @@ public class BoardController {
 		
 		return "board/view";
 	}	
-	@RequestMapping("/board/content")
-	public void content() {
-		System.out.println("content()..");		
-	}
+//	@RequestMapping("/board/content")
+//	public void content() {
+//		System.out.println("content()..");		
+//	}
 //위와 동일
 //	@RequestMapping("/board/content")
 //	public String content() {
 //		System.out.println("content()..");	
 //		return "board/content";
 //	}
-	
+	@RequestMapping("/board/content")
+	public void content(Model model, Locale locale) {//Locale객체는 
+		System.out.println("content()..");		
+		model.addAttribute("id",30);
+		model.addAttribute("age",30);
+		model.addAttribute("name","홍길동");
+		
+		Date date = new Date();
+		DateFormat dateFormat = 
+				DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+	      model.addAttribute("serverTime", formattedDate );
+
+
+	}
 	
 }
