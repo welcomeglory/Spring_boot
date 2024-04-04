@@ -13,6 +13,17 @@ public class BoardController {
 		
 		return "board";
 	}	
+	@RequestMapping("/board/view")
+	public String view() {
+		System.out.println("view()..");
+		
+		return "board/view";
+	}	
+	@RequestMapping("/board/content")
+	public void content() {
+		System.out.println("content()..");
+		
+	}	
 	
 	
 }

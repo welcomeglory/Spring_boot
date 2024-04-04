@@ -33,7 +33,7 @@ public class HomeController {
 		return "stop";
 	}
 	
-	@GetMapping("/go2")
+	@GetMapping("/go/go2")
 	public String go2() {
 		System.out.println("go2()..");
 		
