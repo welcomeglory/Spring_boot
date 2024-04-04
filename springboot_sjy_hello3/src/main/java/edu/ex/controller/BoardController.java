@@ -60,13 +60,11 @@ public class BoardController {
 		mv.setViewName("board/reply");
 		return mv;
 	}
-	
+
 	@RequestMapping("/board/grade")
 	public String grade(Model model) {
-		Grade grade = new Grade(80,60,70);
-		
+		Grade grade = new Grade(80, 60, 70);
 		model.addAttribute("grade", grade);
-
 		return "board/grade";
 	}
 
