@@ -8,8 +8,7 @@
 </head>
 <body>
 <h1>원넓이</h1>
-<h1>반지름 : ${radius }</h1>
-<h1>넓이 : ${area }</h1>
-
+<h1>반지름 : ${circle.radius }</h1>
+<h1>넓이 : ${circle.area }</h1>
 </body>
 </html>

@@ -9,10 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import edu.ex.vo.Circle;
 import edu.ex.vo.Grade;
 import edu.ex.vo.Rectangle;
 
@@ -27,18 +29,16 @@ public class ShapeController {
 	return "home";
 	}
 	//http://localhost:8282/shape/circle?radius=10
-	@GetMapping("/circle")
+	@PostMapping("/circle")
 	public String circle(HttpServletRequest request,Model model) {
 		System.out.println("circle()..");
 		String radius = request.getParameter("radius");
-		double r = Integer.parseInt(radius);
-		double area = r*r*Math.PI;
 		
-		System.out.println(radius);
-		model.addAttribute("radius", radius);
-		model.addAttribute("area", area);
+		Circle circle = new Circle(Integer.valueOf(radius));
+
+		model.addAttribute("circle", circle);
+
 
 		return "/shape/circle";
 	}
-
 }
