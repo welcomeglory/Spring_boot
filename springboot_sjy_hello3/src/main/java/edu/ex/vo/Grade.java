@@ -5,6 +5,8 @@ public class Grade {
 	private double eng;
 	private double math;
 	
+	public Grade() {}
+	
 	public Grade(double kor,double eng, double math) {
 		this.kor = kor;
 		this.eng = eng;

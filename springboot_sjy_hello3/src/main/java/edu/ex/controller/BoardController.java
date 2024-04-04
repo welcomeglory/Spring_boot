@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.ex.vo.Grade;
+import edu.ex.vo.Rectangle;
 
 @Controller // url 처리 view 결정
 public class BoardController {
@@ -62,10 +63,35 @@ public class BoardController {
 	}
 
 	@RequestMapping("/board/grade")
-	public String grade(Model model) {
-		Grade grade = new Grade(80, 60, 70);
+	public String grade(Model model, Grade grade) {
+		System.out.println("grade()..");
+
+//		Grade grade = new Grade(80, 60, 70);
+		grade.setKor(80);
+		grade.setEng(60);
+		grade.setMath(70);
+		
 		model.addAttribute("grade", grade);
 		return "board/grade";
+	}
+//	@RequestMapping("/board/rectangle")
+//	public String rectangle(Model model) {
+//		System.out.println("rectangle()..");
+//
+//		Rectangle rectangle = new Rectangle(80,70);
+//		
+//		model.addAttribute("rectangle", rectangle);
+//		return "board/rectangle";
+//	}
+	@RequestMapping("/board/rectangle")
+	public String rectangle(Model model, Rectangle rec) {
+		System.out.println("rectangle()..");
+
+		rec.setHeight(50);
+		rec.setWidth(70);
+		
+		model.addAttribute("rec", rec);
+	return "/board/rectangle";
 	}
 
 }
