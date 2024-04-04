@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,11 +26,19 @@ public class ShapeController {
 
 	return "home";
 	}
+	//http://localhost:8282/shape/circle?radius=10
 	@GetMapping("/circle")
-	public String circle() {
+	public String circle(HttpServletRequest request,Model model) {
 		System.out.println("circle()..");
+		String radius = request.getParameter("radius");
+		double r = Integer.parseInt(radius);
+		double area = r*r*Math.PI;
+		
+		System.out.println(radius);
+		model.addAttribute("radius", radius);
+		model.addAttribute("area", area);
 
-	return "home";
+		return "/shape/circle";
 	}
 
 }
