@@ -11,20 +11,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller //url 처리 view 결정
+@Controller // url 처리 view 결정
 public class BoardController {
-	@RequestMapping(value="/board", method = RequestMethod.GET)
+	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	public String board() {
 		System.out.println("board()..");
-		
+
 		return "board";
-	}	
+	}
+
 	@RequestMapping("/board/view")
 	public String view() {
 		System.out.println("view()..");
-		
+
 		return "board/view";
-	}	
+	}
+
 //	@RequestMapping("/board/content")
 //	public void content() {
 //		System.out.println("content()..");		
@@ -36,25 +38,25 @@ public class BoardController {
 //		return "board/content";
 //	}
 	@RequestMapping("/board/content")
-	public void content(Model model, Locale locale) {//Locale객체는 
-		System.out.println("content()..");		
-		model.addAttribute("id",30);
-		model.addAttribute("age",30);
-		model.addAttribute("name","홍길동");
-		
+	public void content(Model model, Locale locale) {// Locale객체는
+		System.out.println("content()..");
+		model.addAttribute("id", 30);
+		model.addAttribute("age", 30);
+		model.addAttribute("name", "홍길동");
+
 		Date date = new Date();
-		DateFormat dateFormat = 
-				DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+
 		String formattedDate = dateFormat.format(date);
-	      model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("serverTime", formattedDate);
 	}
+
 	@RequestMapping("/board/reply")
 	public ModelAndView reply(ModelAndView mv) {
 //		ModelAndView mv = new ModelAndView();
-		mv.addObject("id",30);
+		mv.addObject("id", 30);
 		mv.setViewName("board/reply");
 		return mv;
 	}
-	
+
 }
