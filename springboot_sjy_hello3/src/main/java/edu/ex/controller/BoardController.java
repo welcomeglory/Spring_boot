@@ -21,9 +21,14 @@ public class BoardController {
 	}	
 	@RequestMapping("/board/content")
 	public void content() {
-		System.out.println("content()..");
-		
-	}	
+		System.out.println("content()..");		
+	}
+//위와 동일
+//	@RequestMapping("/board/content")
+//	public String content() {
+//		System.out.println("content()..");	
+//		return "board/content";
+//	}
 	
 	
 }
