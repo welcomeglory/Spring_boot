@@ -39,7 +39,6 @@ public class ShapeController {
 //
 //		model.addAttribute("circle", circle);
 //
-//
 //		return "/shape/circle";
 //	}
 	@RequestMapping("/circle")
