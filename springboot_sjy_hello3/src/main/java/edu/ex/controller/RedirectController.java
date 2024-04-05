@@ -15,12 +15,18 @@ public class RedirectController {
 		}
 		System.out.println("redirectCheck()..");
 
-		return "redirect:studentNG";
+		return "redirect:/studentNG";
 	}
 	@RequestMapping("/studentOK")
 	public String studentOK() {
 		return "/student/studentOK";
 	}
+	
+	@RequestMapping("/studentNG")
+	public String studentNG() {
+		return "/student/studentNG";
+	}
+
 
 	
 	

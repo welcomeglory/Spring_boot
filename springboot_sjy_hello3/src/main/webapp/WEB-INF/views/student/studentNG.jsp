@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>studentNG</h1>
+아이디가 다릅니다.
 </body>
 </html>
