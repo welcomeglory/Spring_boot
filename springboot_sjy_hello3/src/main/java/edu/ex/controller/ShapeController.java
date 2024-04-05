@@ -65,14 +65,9 @@ public class ShapeController {
 	@RequestMapping("/rectangle")
 	public String circle(Rectangle rec, Model model) {
 		System.out.println("command객체.. rectangle()..");
-//		String radius = request.getParameter("radius");
-//		Circle circle = new Circle(radius);
 
 		model.addAttribute("rec", rec);
 
 		return "/shape/rectangle";
-	}
-	
-	
-	
+	}	
 }
