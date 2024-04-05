@@ -8,10 +8,16 @@
 </head>
 <body>
 <h1>학생 정보 확인 : </h1>
-아이디 : ${studentInfomation.id }<br>
+<!--  아이디 : ${studentInfomation.id }<br>
  비번 : ${studentInfomation.pw }<br>
  이름 : ${studentInfomation.name }<br>
 이메일 : ${studentInfomation.email }<br>
-나이 : ${studentInfomation.age }<br>
+나이 : ${studentInfomation.age }<br>-->
+
+아이디 : ${studentInfo.id }<br>
+ 비번 : ${studentInfo.pw }<br>
+ 이름 : ${studentInfo.name }<br>
+이메일 : ${studentInfo.email }<br>
+나이 : ${studentInfo.age }<br>
 </body>
 </html>
