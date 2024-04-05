@@ -30,7 +30,7 @@ public class MemberController {
 
 	return "member/register";
 	}
-	@RequestMapping("/register")
+	@PostMapping("/register")
 	public String register(@RequestParam("name") String name,
 			@RequestParam("id") String id, 
 			@RequestParam("pw") String pw,
@@ -38,9 +38,14 @@ public class MemberController {
 			@RequestParam("age") int age,			
 			Model model) {
 		System.out.println("register()..");
-		MemberVO memberVO = new MemberVO(name, id,pw, email,age);
+		MemberVO member = new MemberVO(name, id,pw, email,age);
+		member.setAge(age);
+		member.setEmail(email);
+		member.setId(id);
+		member.setName(name);
+		member.setPw(pw);	
 		
-		model.addAttribute("memberVO", memberVO);
+		model.addAttribute("member", member);
 
 	return "member/register";
 	}
