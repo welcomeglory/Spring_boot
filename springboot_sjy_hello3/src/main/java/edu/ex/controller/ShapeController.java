@@ -23,12 +23,12 @@ import edu.ex.vo.Rectangle;
 @RequestMapping("/shape")
 public class ShapeController {
 	
-	@GetMapping("/rectangle")
-	public String rectangle() {
-		System.out.println("rectangle()..");
-
-	return "home";
-	}
+//	@GetMapping("/rectangle")
+//	public String rectangle() {
+//		System.out.println("rectangle()..");
+//
+//	return "home";
+//	}
 	//http://localhost:8282/shape/circle?radius=10
 //	@RequestMapping("/circle")
 //	public String circle(HttpServletRequest request,Model model) {
@@ -61,6 +61,16 @@ public class ShapeController {
 		model.addAttribute("circle", circle);
 
 		return "/shape/circle";
+	}
+	@RequestMapping("/rectangle")
+	public String circle(Rectangle rec, Model model) {
+		System.out.println("command객체.. rectangle()..");
+//		String radius = request.getParameter("radius");
+//		Circle circle = new Circle(radius);
+
+		model.addAttribute("rec", rec);
+
+		return "/shape/rectangle";
 	}
 	
 	
