@@ -12,5 +12,15 @@
 아이디 입력:<input type="text" name="id"><br>
 <input type="submit" value="제출">
 </form>
+<hr>
+<form action="${pageContext.request.contextPath}/studentView" method="POST">
+      아이디:<input type="text" name="id" ><br>
+      패스워드:<input type="text" name="pw" ><br>
+      이름:<input type="text" name="name" ><br>
+      이메일:<input type="text" name="email" ><br>
+      나이:<input type="text" name="age" ><br>      
+      <input type="submit" value="전송">
+      <input type="reset" value="리셋">
+   </form>
 </body>
 </html>

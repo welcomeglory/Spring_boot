@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.ex.vo.Circle;
 import edu.ex.vo.Grade;
 import edu.ex.vo.Rectangle;
+import edu.ex.vo.StudentInfomation;
 
 @Controller 
 public class StudentController {
@@ -30,16 +31,25 @@ public class StudentController {
 		return "student/student";
 	}
 	
+//아래 세가지 방식	
+//	@RequestMapping(method =  RequestMethod.POST,value = "/student")
+//	@RequestMapping("/student")
+//	@PostMapping("/student")
+//	public String student(@RequestParam("id") String id,  Model model) {
+//		System.out.println("student()..");
+//
+//		model.addAttribute("id", id);
+//
+//		return "/student/student_id";
+//	}
 	
-	@RequestMapping(method =  RequestMethod.POST,value = "/student")
-	public String student(@RequestParam("id") String id,  Model model) {
-		System.out.println("student()..");
-//		String radius = request.getParameter("radius");
-//		Circle circle = new Circle(radius);
+	@PostMapping("/studentView")
+	public String studentView(StudentInfomation studentInfomation,  Model model) {
+		System.out.println("studentView()..");
 
-		model.addAttribute("id", id);
+		model.addAttribute("studentInfomation", studentInfomation);
 
-		return "/student/student_id";
+		return "/student/studentView";
 	}
 	
 }

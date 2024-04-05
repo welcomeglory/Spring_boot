@@ -8,6 +8,5 @@
 </head>
 <body>
 <h1>학생 번호 확인 :  ${id}</h1>
-</form>
 </body>
 </html>
