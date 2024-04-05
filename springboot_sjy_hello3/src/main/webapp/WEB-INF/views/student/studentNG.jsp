@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>studentNG</h1>
-아이디가 다릅니다.
+<h1>studentNG
+아이디가 다릅니다.${id}</h1>
 </body>
 </html>
