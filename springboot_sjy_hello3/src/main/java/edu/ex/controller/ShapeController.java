@@ -41,11 +41,22 @@ public class ShapeController {
 //
 //		return "/shape/circle";
 //	}
+	//from	
+//	@RequestMapping("/circle")
+//	public String circle(@RequestParam("radius") double radius, Model model) {
+//		System.out.println("circle()..");
+////		String radius = request.getParameter("radius");
+//		Circle circle = new Circle(radius);
+//
+//		model.addAttribute("circle", circle);
+//
+//		return "/shape/circle";
+//	}
 	@RequestMapping("/circle")
-	public String circle(@RequestParam("radius") double radius, Model model) {
-		System.out.println("circle()..");
+	public String circle(Circle circle, Model model) {
+		System.out.println("command객체.. circle()..");
 //		String radius = request.getParameter("radius");
-		Circle circle = new Circle(radius);
+//		Circle circle = new Circle(radius);
 
 		model.addAttribute("circle", circle);
 

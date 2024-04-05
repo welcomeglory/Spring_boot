@@ -14,11 +14,13 @@
 나이:<input type="text"  name="age"  value="${member.age}" ><br>
 <input type="submit"  value="전송">
 <input type="reset"  value="리셋">
-<h1>${member.name }</h1>
-<h1>${member.id }</h1>
-<h1>${member.pw }</h1>
-<h1>${member.email }</h1>
-<h1>${member.age }</h1>
+<hr>
+${member.name }<br>
+${member.id }<br>
+${member.pw }<br>
+${member.email }<br>
+${member.age }<br>
+
 </form>
 </body>
 </html>
