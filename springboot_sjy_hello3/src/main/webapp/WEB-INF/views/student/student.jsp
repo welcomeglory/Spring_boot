@@ -22,5 +22,11 @@
       <input type="submit" value="전송">
       <input type="reset" value="리셋">
    </form>
+   <hr>
+   <h1>redirectCheck</h1>   
+   <form action="${pageContext.request.contextPath}/redirect/check" method="POST">
+아이디 입력:<input type="text" name="id"><br>
+<input type="submit" value="제출">
+</form>
 </body>
 </html>
