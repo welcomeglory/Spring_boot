@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>학생 번호를 입력하시오.</h1>
-<form action="${pageContext.request.contextPath}/student" method="post">
+<form action="${pageContext.request.contextPath}/student" method="POST">
 아이디 입력:<input type="text" name="id"><br>
 <input type="submit" value="제출">
 </form>

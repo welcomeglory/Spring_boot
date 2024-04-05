@@ -31,7 +31,7 @@ public class StudentController {
 	}
 	
 	
-	@RequestMapping(method =  RequestMethod.GET,value = "/student")
+	@RequestMapping(method =  RequestMethod.POST,value = "/student")
 	public String student(@RequestParam("id") String id,  Model model) {
 		System.out.println("student()..");
 //		String radius = request.getParameter("radius");
